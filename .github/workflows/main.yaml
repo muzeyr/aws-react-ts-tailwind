@@ -25,7 +25,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gatsby-alexhyett-site-build-
       - name: Install dependencies
-        run: NPM install
+        run: npm install
       - name: Run Lint
         run: npm run lint
       - name: Build

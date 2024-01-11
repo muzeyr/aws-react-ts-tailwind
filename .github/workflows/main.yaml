@@ -1,4 +1,4 @@
-name: Deploy Blog
+name: Deploy to S3
 
 on:
   push:
@@ -17,17 +17,6 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 20
-      - name: Caching Gatsby
-        id: gatsby-cache-build
-        uses: actions/cache@v2
-        with:
-          path: |
-            public
-            .cache
-            node_modules
-          key: ${{ runner.os }}-gatsby-alexhyett-site-build-${{ github.run_id }}
-          restore-keys: |
-            ${{ runner.os }}-gatsby-alexhyett-site-build-
       - name: Install dependencies
         run: npm install
       - name: Build
